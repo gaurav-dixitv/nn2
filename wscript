@@ -34,9 +34,12 @@
 #| had knowledge of the CeCILL license and that you accept its terms.
 
 import os
+import sferes
 
-def configure(conf):
-	pass
+def options(blah) : pass
+
+def configure(blah): pass
+
 def build(bld):
     print ("Entering directory `" + os.getcwd() + "/modules/'")
     bld.program('cxx', 'test',
@@ -93,5 +96,5 @@ def build(bld):
                 source = 'example_dnn_nsga2.cpp',
                 includes = '. ../../',
                 use = 'sferes2',
-                uselib = 'EIGEN BOOST_GRAPH BOOST TBB',
+                uselib = 'EIGEN BOOST_GRAPH BOOST TBB PTHREAD',
                 target = 'example_dnn_nsga2')
